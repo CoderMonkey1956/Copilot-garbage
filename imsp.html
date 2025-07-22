@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Is My Switch Patched?</title>
+  <style>
+    body {
+      background-color: #1e1e1e;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+
+    img {
+      width: 250px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    p.description {
+      font-size: 16px;
+      max-width: 600px;
+      margin: 0 auto 30px;
+      color: #cccccc;
+    }
+
+    select, input[type="text"] {
+      padding: 10px;
+      font-size: 16px;
+      margin: 5px;
+      border-radius: 5px;
+      border: none;
+      width: 200px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #ff5555;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .note {
+      font-size: 14px;
+      color: #aaaaaa;
+      margin-top: 30px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</head>
+<body>
+  <img src="your-logo.png" alt="Is My Switch Patched Logo" />
+  <h1>IS MY SWITCH PATCHED?</h1>
+  <p class="description">
+    Just Another Switch Serial Number Checker — Quickly and easily check the patch status of your Nintendo Switch console using our simple online tool.
+  </p>
+
+  <form onsubmit="handleSubmit(event)">
+    <select id="prefix">
+      <option value="XAW1">XAW1</option>
+      <option value="XAW7">XAW7</option>
+      <option value="XAJ1">XAJ1</option>
+      <!-- Add more if needed -->
+    </select>
+    <input type="text" id="serialInput" placeholder="Enter first 6 digits" maxlength="6" />
+    <button type="submit">Check</button>
+  </form>
+
+  <p class="note">
+    If you don't see the prefix of your Nintendo Switch console on our website, it's likely that your console is too recent and is definitely patched. For example, prefixes like XKW or XKJ belong to the Mariko unit and are definitely patched.
+  </p>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      const input = document.getElementById('serialInput').value;
+      if (input.includes("8")) {
+        alert("Detected forbidden number 8. Closing the webpage.");
+        window.close(); // May be blocked by most modern browsers
+      } else {
+        alert("Serial submitted: " + document.getElementById('prefix').value + input);
+      }
+    }
+  </script>
+</body>
+</html>
