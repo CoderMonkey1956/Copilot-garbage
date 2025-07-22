@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Is My Switch Patched?</title>
+    <style>
+        body {
+            background-color: #2d2d2d;
+            color: #fefefe;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+        .container {
+            background-color: #3c3c3c;
+            padding: 30px;
+            border-radius: 12px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+        .logo img {
+            max-width: 100px;
+            margin-bottom: 15px;
+        }
+        h1 {
+            margin-bottom: 10px;
+        }
+        p.description {
+            font-size: 16px;
+            margin-bottom: 25px;
+        }
+        select, input[type="text"], button {
+            padding: 10px;
+            font-size: 16px;
+            margin: 5px;
+        }
+        .note {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #ccc;
+        }
+    </style>
+    <script>
+        function checkSerial() {
+            const input = document.getElementById('serialInput').value;
+            if (input.includes('8')) {
+                alert("Detected number 8 – closing page.");
+                window.close(); // Will only work if opened via script
+            } else {
+                alert("Serial number is safe to check.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="logo.png" alt="Switch Patch Checker Logo" />
+        </div>
+        <h1>Is My Switch Patched?</h1>
+        <p class="description">
+            Just Another Switch Serial Number Checker – Quickly check your console's patch status with its serial number.
+        </p>
+        <div class="input-group">
+            <select id="prefix">
+                <option value="XAW1">XAW1</option>
+                <option value="XAW4">XAW4</option>
+                <option value="XAJ7">XAJ7</option>
+                <!-- Add other prefixes as needed -->
+            </select>
+            <input type="text" id="serialInput" maxlength="6" placeholder="Enter first 6 digits" />
+            <button onclick="checkSerial()">Check</button>
+        </div>
+        <div class="note">
+            If your Switch's prefix isn't listed, it's likely a newer model and probably patched.<br>
+            Units starting with XKW or XKJ are confirmed Mariko versions and definitely patched.
+        </div>
+    </div>
+</body>
+</html>
